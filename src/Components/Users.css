@@ -1,0 +1,90 @@
+.container-fluid {
+  height: 100vh;
+}
+.user-container {
+  width: 68vw;
+  height: 83vh;
+  background-color: #ecf1f1 !important;
+  box-shadow: 0px 0px 7px rgba(0,0,0,0.2);
+}
+.user-container h4 {
+  font-size: 17px;
+}
+.user-container .col .row,
+.user-container .col-8 .row{
+  height: 95%;
+}
+.user-container .col .row::-webkit-scrollbar,
+.user-container .col-8 .row::-webkit-scrollbar{
+  display: none !important;
+}
+.card-body h4 {
+  font-size: 12px;
+}
+.card-image {
+  width: 50px;
+  height: 50px;
+}
+.card {
+  cursor: pointer;
+}
+.loading-container .loading {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  animation: circle_loading 0.5s ease-in alternate-reverse infinite;
+  transition: 0.5s;
+}
+@keyframes circle_loading {
+  0% {
+    transform: scale(1.7) translateY(-10px);
+  }
+}
+.loading-container .loading:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.loading-container .loading:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.loading-container .loading:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.loading-container .loading:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.loading-container .loading:nth-child(4) {
+  animation-delay: 1s;
+}
+.col-4 {
+  height: 95% !important;
+}
+.col-4 .card{
+  height: 95% !important;
+}
+.col-4 .card img{
+    width: 170px;
+    height: 170px;
+}
+.col-4 .card .card-title{
+    font-size: 14px;
+    color: #ff006e;
+}
+.user-details h4{
+    font-size: 14px;
+}
+.user-details div strong{
+    min-width: 80px;
+    height: fit-content;
+    font-size: 12px;
+    font-weight: 400;
+}
+.user-details div small{
+    font-weight: 600;
+    font-size: 12px;
+}
+.error-icon{
+  font-size: 80px;
+}
+.error-icon ~ h3{
+  font-size: 18px;
+}
