@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const UserLists = ({ listItem, setSelectedItem }) => {
+  useEffect(() => {
+    setSelectedItem("");
+  }, []);
   const insertSelecteddata = () => {
     setSelectedItem(listItem);
   };

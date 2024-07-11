@@ -8,14 +8,13 @@ const Users = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
+  const API_URL = "https://602e7c2c4410730017c50b9d.mockapi.io/users";
   useEffect(() => {
     async function fetData() {
       try {
+        setData([]);
         setLoading(true);
-        const response = await axios.get(
-          "https://602e7c2c4410730017c50b9d.mockapi.io/users"
-        );
-        setLoading(false);
+        const response = await axios.get(API_URL);
         const resData = await response.data;
         setData(resData);
       } catch (error) {
@@ -25,7 +24,7 @@ const Users = () => {
       }
     }
     fetData();
-  }, []);
+  }, [API_URL]);
   return (
     <div className="container-fluid d-flex align-items-center justify-content-center">
       <div className="user-container p-3 bg-white shadow-sm rounded-1 overflow-hidden position-relative">
@@ -42,12 +41,14 @@ const Users = () => {
                     <div className="loading rounded-circle"></div>
                   </div>
                 </div>
-              ) : error || data.length == 0 ? (
+              ) : error && data.length == 0 ? (
                 <div className="w-100 h-100 bg-white rounded-1 d-flex align-items-center justify-content-center position-absolute z-1 top-0 start-0">
                   <div className="d-flex flex-column align-items-center gap-3">
                     <i className="fa-regular fa-face-frown error-icon text-danger"></i>
                     <h3>
-                      {data.length == 0 ? "Data is not available" : error}
+                      {data.length == 0
+                        ? "Data is not available"
+                        : "Please Check Your Internet Connection"}
                     </h3>
                   </div>
                 </div>
