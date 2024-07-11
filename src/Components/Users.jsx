@@ -42,11 +42,15 @@ const Users = () => {
                     <div className="loading rounded-circle"></div>
                   </div>
                 </div>
-              ) : error ? (
+              ) : error || data.length == 0 ? (
                 <div className="w-100 h-100 bg-white rounded-1 d-flex align-items-center justify-content-center position-absolute z-1 top-0 start-0">
                   <div className="d-flex flex-column align-items-center gap-3">
                     <i className="fa-regular fa-face-frown error-icon text-danger"></i>
-                    <h3>Please Check Your Internet Connection</h3>
+                    <h3>
+                      {data.length == 0
+                        ? "Data is not available"
+                        : "Please Check Your Internet Connection"}
+                    </h3>
                   </div>
                 </div>
               ) : (
