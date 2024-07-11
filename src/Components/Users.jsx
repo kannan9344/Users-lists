@@ -47,9 +47,7 @@ const Users = () => {
                   <div className="d-flex flex-column align-items-center gap-3">
                     <i className="fa-regular fa-face-frown error-icon text-danger"></i>
                     <h3>
-                      {data.length == 0
-                        ? "Data is not available"
-                        : "Please Check Your Internet Connection"}
+                      {data.length == 0 ? "Data is not available" : error}
                     </h3>
                   </div>
                 </div>
